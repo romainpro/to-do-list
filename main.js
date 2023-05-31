@@ -1,19 +1,33 @@
-const btn = document.getElementById(`btn`);
-const text = document.getElementById(`text`);
-const para = document.getElementById(`para`);
-const sup = document.getElementsByClassName(`del`);
+let btn = document.getElementById("btnAdd");
+let target = document.getElementById("target");
+let inputFields = document.getElementById("inputFields");
+const array = [];
 
-btn.addEventListener(`click`, addListe);
+btn.addEventListener("click",addStain)
 
-function addListe() {
-  if (text.value == "") {
-    alert("veuillez écrire dans le champs avant de clicker sur add");
-  } else {
-    let span = document.createElement("p");
-    span.classList = "add";
-    span.innerHTML = text.value;
-    para.appendChild(span);
+
+
+
+function addStain(){
+  console.log("click");
+  if (inputFields && inputFields.value){
+    console.log(inputFields.value);
+    array.push(`${inputFields.value}`);
+    console.log(array);
+    addHtml();
   }
+  else{
+    console.log("rien");
+    return false
+  }
+}
+
+
+function addHtml(){
+  console.log("vrai");
+   let div = document.createElement("div");
+    div.innerHTML=(`${inputFields.value}`);
+    target.appendChild(div);
 }
 
 
