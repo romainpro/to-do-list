@@ -3,8 +3,8 @@ let target = document.getElementById("target");
 let inputFields = document.getElementById("inputFields");
 const array = [];
 
-btn.addEventListener("click",addStain)
 
+btn.addEventListener("click",addStain)
 
 
 
@@ -26,8 +26,12 @@ function addStain(){
 function addHtml(){
   console.log("vrai");
    let div = document.createElement("div");
-    div.innerHTML=(`${inputFields.value}`);
+   let del = document.createElement('button')
+    div.innerHTML=(`${inputFields.value} `);
     target.appendChild(div);
+
+    del.innerHTML=('X');
+    target.appendChild(del);
 }
 
 
